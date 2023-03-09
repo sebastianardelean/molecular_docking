@@ -17,6 +17,8 @@ RUN apt-get update --yes && \
     gcc && \
     apt-get clean && rm -rf /var/lib/apt/lists/*
 
+USER ${NB_UID}
+
 RUN mamba install --quiet --yes \
     'r-base' \
     'r-caret' \
